@@ -8,6 +8,17 @@ Production-ready full-stack app for creating and tracking financial goals with a
 - SQLite (better-sqlite3) persistent storage
 - Recharts for data visualizations
 
+## Required Versions
+Use these versions (or compatible newer patch versions) for best results:
+- **Node.js:** `>=20.0.0` (recommended: `20.20.2`)
+- **npm:** `>=10` (recommended: `11.4.2`)
+
+You can verify installed versions with:
+```bash
+node -v
+npm -v
+```
+
 ## Features
 - CRUD goals with validation
 - Deposit/withdrawal transaction logging per goal
@@ -16,20 +27,39 @@ Production-ready full-stack app for creating and tracking financial goals with a
 - Summary metrics: total saved, average monthly contribution, completion rate
 - Prediction engine: projected completion date, what-if simulator, behind-pace alerts, confidence score
 
-## Run locally
-```bash
-npm install
-npm run dev
-```
-- Frontend: http://localhost:5173
-- API: http://localhost:4000
+## Run Locally (Step-by-step)
+1. **Clone and enter the project**
+   ```bash
+   git clone <your-repo-url>
+   cd finance-goals
+   ```
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+3. **Start backend + frontend in development mode**
+   ```bash
+   npm run dev
+   ```
+4. **Open the app**
+   - Frontend: `http://localhost:5173`
+   - API: `http://localhost:4000`
 
-## Build & start
+## Production Build & Run
+1. Build frontend assets:
 ```bash
 npm run build
+```
+2. Start API server:
+```bash
 npm run start
 ```
 
-## Project structure
+## Data Persistence
+- Goals and transactions are stored in a local SQLite database at:
+  - `server/data.db`
+- Data persists across page refreshes and server restarts.
+
+## Project Structure
 - `client/` React app
 - `server/` Express API and SQLite DB (`server/data.db`)
