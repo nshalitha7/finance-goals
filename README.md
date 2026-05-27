@@ -19,6 +19,16 @@ node -v
 npm -v
 ```
 
+## Version Manager (nvm)
+If you use `nvm`, run:
+```bash
+nvm use
+npm install
+npm run dev
+```
+
+> `nvm run dev` is **not** the right command for npm scripts. It tries to run a Node file named `dev`, which causes `MODULE_NOT_FOUND`.
+
 ## Features
 - CRUD goals with validation
 - Deposit/withdrawal transaction logging per goal
